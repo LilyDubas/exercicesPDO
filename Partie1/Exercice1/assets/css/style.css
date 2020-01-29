@@ -1,0 +1,26 @@
+#show{
+  background-color: black;
+}
+#showtime{
+  width: 100%;
+  height: auto;
+  justify-content: center;
+  background-color: black;
+  display: flex;
+  position: relative;
+}
+#header{
+  margin-left: 25%;
+}
+.menu{
+  margin-bottom: 5%;
+}
+#spectacles{
+  width: 70%;
+  border-style: solid;
+  border-color: black;
+
+}
+#thanks{
+  margin: 2%;
+}
