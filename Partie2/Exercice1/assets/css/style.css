@@ -1,0 +1,112 @@
+/* header */
+#showtime{
+  width: 100%;
+  height: auto;
+  justify-content: center;
+  background-color: #d5f4f6;
+  display: flex;
+  position: relative;
+}
+#header{
+  margin-left: 25%;
+}
+/* page d'accueil */
+#welcome{
+  margin-left: 5%;
+  margin-right: 5%;
+}
+#buttons{
+  position: relative;
+  margin: auto;
+  justify-content: space-around;
+
+}
+#subscribe{
+    font-size: 1.8rem;
+    padding: 1rem 0;
+    width: 20rem;
+    text-align: center;
+    border: 0.1rem solid #00ff00;
+    margin-bottom: 1rem;
+    text-decoration: none;
+    background-color: #00ff00;
+    color: white;
+}
+#subscribe:hover{
+    box-shadow: 0 0.4rem 1.4rem 0 rgb(0, 255, 0);
+    transform: translateY(-0.1rem);
+    transition: transform 150ms;
+    color: white;
+}
+#subscribe[disabled]:hover{
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+/* #login{
+    font-size: 1.8rem;
+    padding: 1rem 0;
+    width: 20rem;
+    text-align: center;
+    border: 0.1rem solid #259FE5;
+    margin-bottom: 1rem;
+    text-decoration: none;
+    background-color: #259FE5;
+    color: white;
+}
+#login:hover{
+    box-shadow: 0 0.4rem 1.4rem 0 rgb(37, 159, 229);
+    transform: translateY(-0.1rem);
+    transition: transform 150ms;
+    color: white;
+}
+#login[disabled]:hover{
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+} */
+/* formulaire ajout patient */
+#signIn{
+  margin-left: 5%;
+  margin-right: 5%;
+}
+#instructions{
+  width:30%;
+  height:70vh;
+  background-color: #00ff00;
+}
+#formPatient{
+  width:70%;
+  height: 70vh;
+  border-style: solid;
+  border-color: #00ff00;
+}
+#birthdate{
+  margin-bottom: 5%;
+}
+#subscribe2{
+    font-size: 1.8rem;
+    padding: 1rem 0;
+    width: 20rem;
+    text-align: center;
+    border: 0.1rem solid #00ff00;
+    margin-bottom: 1rem;
+    text-decoration: none;
+    background-color: #00ff00;
+    color: white;
+}
+#subscribe2:hover{
+    box-shadow: 0 0.4rem 1.4rem 0 rgb(0, 255, 0);
+    transform: translateY(-0.1rem);
+    transition: transform 150ms;
+    color: white;
+}
+#subscribe2[disabled]:hover{
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+.blank{
+  width: 100%;
+  height: 20vh;
+}
