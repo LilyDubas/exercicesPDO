@@ -42,5 +42,8 @@ foreach ($usersList AS $user):
 endforeach;
 ?>
 </div>
+<div class="blank">
+
+</div>
 </body>
 </html>

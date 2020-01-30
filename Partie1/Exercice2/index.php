@@ -42,5 +42,8 @@ foreach ($showTypesList AS $type):
 endforeach;
 ?>
 </div>
+<div class="blank">
+
+</div>
 </body>
 </html>
