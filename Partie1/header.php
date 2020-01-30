@@ -15,6 +15,7 @@
     </div>
     <nav class="mb-1 navbar navbar-expand-lg bg-primary">
   <a class="navbar-brand text-white" href="#">PARTIE 1</a>
+  <a class="navbar-brand text-white" href="http://www.exercicespdo.com/Partie2/Exercice1/index.php">PARTIE 2</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
   aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
   <span class="navbar-toggler-icon"></span>
