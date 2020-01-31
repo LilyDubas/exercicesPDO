@@ -75,6 +75,12 @@
   height:70vh;
   background-color: #00ff00;
 }
+#confirmation{
+    margin: auto;
+    width: 100%;
+    font-size: 4rem;
+    font-weight: bold;
+}
 #formPatient{
   width:70%;
   height: 70vh;

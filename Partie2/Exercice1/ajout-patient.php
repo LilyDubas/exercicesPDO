@@ -12,46 +12,51 @@
       <?php include '../header.php'; ?>
     </div>
   </header>
-  <?php
 
-  function connectDb() {
-  require_once 'params.php';
-
-  $dsn = 'mysql:dbname=' . DB . ';host=' . HOST. ';charset=utf8';
-
-  try {
-  $db = new PDO($dsn, USER, PASSWD);
-  return $db;
-} catch (Exception $ex) {
-die('La connexion à la bd a échoué !');
-}
-}
-if (isset($_POST['lastname'])) {
-  $db = connectDb();
-  $lastName = $_POST['lastname'];
-  $requete="INSERT INTO `patients` (`lastname`) VALUES ('$lastName')";
-  $resultat = $db->exec($requete);
-  var_dump($resultat);
-  if ($resultat != false){
-    echo 'Le contact a été ajouté';
-  }
-  else{
-    echo 'Erreur';
-  }
-}
-?>
-</div>
 <h1 class="mt-5 mb-5 text-info text-center">Bienvenue sur Mediflex, le site de tous vos rdv médicaux</h1>
 <div class="d-flex" id="signIn">
-  <div id="instructions">
-    <img src="" alt="">
+  <div id="instructions" class="text-center text-white m-auto">
+      <div id="confirmation">
+        <?php
+
+        function connectDb() {
+          require_once 'params.php';
+
+          $dsn = 'mysql:dbname=' . DB . ';host=' . HOST. ';charset=utf8';
+
+          try {
+            $db = new PDO($dsn, USER, PASSWD);
+            return $db;
+          } catch (Exception $ex) {
+            die('La connexion à la bd a échoué !');
+          }
+        }
+        if (isset($_POST['name'])) {
+          $db = connectDb();
+          $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+          $lastName = $_POST['name'];
+          $firstName = $_POST['firstname'];
+          $birthDate = $_POST['birthdate'];
+          $phone = $_POST['phone'];
+          $mail = $_POST['mail'];
+          $request = $db->prepare("INSERT INTO `patients` ( `lastname`, `firstname`, `birthdate`, `phone`, `mail`) VALUES (?,?,?,?,?)");
+          $request->execute([$lastName, $firstName, $birthDate, $phone, $mail]);
+          if ($request != false){
+            echo 'Le contact a été ajouté avec succès !';
+          }
+          else{
+            echo 'Une erreur s\'est produite lors de l\'enregistrement de vos données';
+          }
+        }
+        ?>
+      </div>
   </div>
   <div class="jumbotron m-auto text-center" id="formPatient">
     <form method="post">
       <div class="form-row">
         <div class="form-group col-md-6">
-          <label for="lastname">Votre nom</label>
-          <input name="lastname" type="text" class="form-control" id="lastname" placeholder="Petit">
+          <label for="name">Votre nom</label>
+          <input name="name" type="text" class="form-control" id="name" placeholder="Petit">
         </div>
         <div class="form-group col-md-6">
           <label for="firstname">Votre prénom</label>
