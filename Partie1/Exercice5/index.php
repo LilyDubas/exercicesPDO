@@ -37,7 +37,8 @@
     $usersList = $usersQueryStat->fetchAll(PDO::FETCH_ASSOC);
     foreach ($usersList AS $user):
       ?>
-      <p><?= $user['lastName'] . ' ' . $user['firstName'] ?></p>
+        <p>Nom: <?= $user['lastName']?></p>
+        <p>Prénom: <?= $user['firstName'] ?></p>
       <?php
     endforeach;
     ?>

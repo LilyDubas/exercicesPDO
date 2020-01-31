@@ -30,46 +30,32 @@
     }
 
     ?>
-    <table id="program">
-      <thead>
-        <tr>
-          <th>Prénom</th>
-          <th>Nom</th>
-          <th>Né le</th>
-          <th>Membre</th>
-          <th>Référence</th>
-        </tr>
-      </thead>
-        <tbody>
         <?php
 
         $db = connectDb();
         $db->exec("SET CHARACTER SET utf8");
-        $query = 'SELECT * FROM `clients`';
+        $query  = 'SELECT `lastName`, `firstName`, DATE_FORMAT(`birthDate`, \'%d/%m/%Y\') `birthDate`, `card`, `cardNumber` FROM `clients`';
         $usersQueryStat = $db->query($query);
-        $usersList = $usersQueryStat->fetchAll(PDO::FETCH_ASSOC);
+        $usersList = $usersQueryStat->fetchAll(PDO::FETCH_OBJ); ?>
+        <div class="row">
+        <?php
         foreach ($usersList AS $user):
-          if ($user['card']=='1') {
-            $user['card']="OUI";
-          }
-          else {
-            $user['card']="NON";
-          }
           ?>
-
-          <tr>
-            <td><?= $user['firstName'] ?></td>
-            <td><?= $user['lastName'] ?></td>
-            <td><?= $user['birthDate'] ?></td>
-            <td><?= $user['card'] ?></td>
-            <td><?= $user['cardNumber'] ?></td>
-          </tr>
-
+        <div class="col-md-4">
+          <div class="card p-2 mt-4 shadow bg-warning">
+            <p>Nom: <?= $user->firstName ?></p>
+            <p>Prénom: <?= $user->lastName ?></p>
+            <p>Date de naissance: <?= $user->birthDate ?></p>
+            <p>Carte: <?= $user->card ? 'OUI' : 'NON' ?></p>
+            <?php if ($user->card): ?>
+            <p>Numéro de carte: <?= $user->cardNumber ?></p>
+            <?php endif; ?>
+          </div>
+        </div>
           <?php
         endforeach;
         ?>
-      </tbody>
-  </table>
+        </div>
 </div>
 <div class="blank">
 

@@ -42,16 +42,16 @@
 
         $db = connectDb();
         $db->exec("SET CHARACTER SET utf8");
-        $query = 'SELECT * FROM `shows` ORDER BY `date` ASC';
+        $query = 'SELECT `title`,`performer`, DATE_FORMAT(`date`,\'%d/%m/%Y\') `date`,`startTime` FROM `shows`';
         $usersQueryStat = $db->query($query);
-        $showsList = $usersQueryStat->fetchAll(PDO::FETCH_ASSOC);
+        $showsList = $usersQueryStat->fetchAll(PDO::FETCH_OBJ);
         foreach ($showsList AS $show):
           ?>
 
           <tr>
-            <td><?= $show['performer'] ?></td>
-            <td><?= $show['date'] ?></td>
-            <td><?= $show['startTime'] ?></td>
+            <td><?= $show->performer ?></td>
+            <td><?= $show->date ?></td>
+            <td><?= $show->startTime ?></td>
           </tr>
 
           <?php
