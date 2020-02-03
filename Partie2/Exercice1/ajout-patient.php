@@ -78,7 +78,7 @@
         <label for="birthdate">Votre date de naissance</label>
         <input name="birthdate" type="date" class="form-control" id="birthdate">
       </div>
-      <button class="btn" type="submit" id="subscribe2">S'inscrire</button>
+      <button class="btn" type="submit" id="subscribe2">Enregistrer</button>
     </form>
   </div>
 </div>

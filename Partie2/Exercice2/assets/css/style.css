@@ -78,7 +78,7 @@
 #confirmation{
     margin: auto;
     width: 100%;
-    font-size: 2rem;
+    font-size: 4rem;
     font-weight: bold;
 }
 #formPatient{
@@ -115,4 +115,10 @@
 .blank{
   width: 100%;
   height: 20vh;
+}
+th{
+    width: 8rem;
+}
+td{
+    width: 8rem;
 }
